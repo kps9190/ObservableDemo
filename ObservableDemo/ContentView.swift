@@ -15,13 +15,20 @@ struct ContentView: View {
         
             NavigationView {
             VStack {
-                Text("타이머 = \(timerData.timerCount)")
+                Text("첫번째 View")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                Text("타이머: \(timerData.timerCount)")
                     .padding()
                 Button(action: resetCount) {
                     Text("카운터 리셋")
+                        .fontWeight(.bold)
                 }
+                NavigationLink(destination: SecondView(timerData: timerData)) {
+                    Text("SecondView로 이동")
+                        .fontWeight(.bold)
+                }
+                .padding()
             }
         }
     }

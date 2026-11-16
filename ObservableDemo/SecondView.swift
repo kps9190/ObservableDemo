@@ -14,7 +14,6 @@ struct SecondView : View {
         VStack {
             Text("두번째 View")
                 .font(.largeTitle)
-                .padding()
             Text("타이머 카운트 = \(timerData.timerCount)")
                 .font(.headline)
                 .padding()
