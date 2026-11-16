@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var timerData: TimerData = TimerData()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+            NavigationView {
+            VStack {
+                Text("타이머 = \(timerData.timerCount)")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                Button(action: resetCount) {
+                    Text("카운터 리셋")
+                }
+            }
         }
-        .padding()
+    }
+    func resetCount() {
+        timerData.resetCount()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
