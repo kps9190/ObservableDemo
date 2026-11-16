@@ -24,13 +24,14 @@ struct ContentView: View {
                     Text("카운터 리셋")
                         .fontWeight(.bold)
                 }
-                NavigationLink(destination: SecondView(timerData: timerData)) {
+                NavigationLink(destination: SecondView()) {
                     Text("SecondView로 이동")
                         .fontWeight(.bold)
                 }
                 .padding()
             }
         }
+            .environmentObject(timerData)
     }
     func resetCount() {
         timerData.resetCount()
